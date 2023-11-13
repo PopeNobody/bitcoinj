@@ -1,3 +1,5 @@
+package org.bitcoinj.examples;
+
 /*
  * Copyright by the original author or authors.
  * 
@@ -13,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-package org.bitcoinj.examples;
 
 import org.bitcoinj.base.BitcoinNetwork;
 import org.bitcoinj.base.ScriptType;
@@ -34,12 +34,14 @@ public class BackupToMnemonicSeed {
 
     public static void main(String[] args) {
 
-        Wallet wallet = Wallet.createDeterministic(BitcoinNetwork.TESTNET, ScriptType.P2PKH);
+        Wallet wallet1 = Wallet.createDeterministic(BitcoinNetwork.TESTNET, ScriptType.P2PKH);
 
-        DeterministicSeed seed = wallet.getKeyChainSeed();
-        System.out.println("seed: " + seed.toString());
-
-        System.out.println("creation time: " + seed.creationTime().get().getEpochSecond());
-        System.out.println("mnemonicCode: " + InternalUtils.SPACE_JOINER.join(seed.getMnemonicCode()));
+        DeterministicSeed seed = wallet1.getKeyChainSeed();
+        String mnemonic = InternalUtils.SPACE_JOINER.join(seed.getMnemonicCode());
+        System.out.println(mnemonic);
+        Wallet wallet2 = Wallet.fromSeed(BitcoinNetwork.TESTNET,seed,ScriptType.P2PKH);
+        seed = wallet2.getKeyChainSeed();
+        mnemonic = InternalUtils.SPACE_JOINER.join(seed.getMnemonicCode());
+        System.out.println(mnemonic);
     }
 }
