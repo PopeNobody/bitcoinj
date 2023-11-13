@@ -1,0 +1,20 @@
+diff --git a/core/src/test/java/org/bitcoinj/protocols/payments/PaymentSessionTest.java b/core/src/test/java/org/bitcoinj/protocols/payments/PaymentSessionTest.java
+index 41d5de3af..2ad895743 100644
+--- a/core/src/test/java/org/bitcoinj/protocols/payments/PaymentSessionTest.java
++++ b/core/src/test/java/org/bitcoinj/protocols/payments/PaymentSessionTest.java
+@@ -25,6 +25,7 @@ import com.google.common.util.concurrent.ListenableFuture;
+ import com.google.protobuf.ByteString;
+ import org.bitcoin.protocols.payments.Protos;
+ import org.junit.Before;
++import org.junit.Ignore;
+ import org.junit.Test;
+ 
+ import java.io.InputStream;
+@@ -122,6 +123,7 @@ public class PaymentSessionTest {
+     }
+ 
+     @Test
++    @Ignore("certificate expired")
+     public void testPkiVerification() throws Exception {
+         InputStream in = getClass().getResourceAsStream("pki_test.bitcoinpaymentrequest");
+         Protos.PaymentRequest paymentRequest = Protos.PaymentRequest.newBuilder().mergeFrom(in).build();

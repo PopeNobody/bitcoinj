@@ -1,0 +1,11 @@
+diff --git a/orchid/.gitignore b/orchid/.gitignore
+deleted file mode 100644
+index f58915aa1..000000000
+--- a/orchid/.gitignore
++++ /dev/null
+@@ -1,5 +0,0 @@
+-bin/
+-orchid-*.jar
+-orchid-*.zip
+-build-revision
+-lib/xmlrpc-*

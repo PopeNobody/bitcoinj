@@ -1,0 +1,13 @@
+diff --git a/core/src/main/java/org/bitcoinj/kits/WalletAppKit.java b/core/src/main/java/org/bitcoinj/kits/WalletAppKit.java
+index a05767a45..fe2372007 100644
+--- a/core/src/main/java/org/bitcoinj/kits/WalletAppKit.java
++++ b/core/src/main/java/org/bitcoinj/kits/WalletAppKit.java
+@@ -130,7 +130,7 @@ public class WalletAppKit extends AbstractIdleService {
+ 
+     /**
+      * If you want to learn about the sync process, you can provide a listener here. For instance, a
+-     * {@link org.bitcoinj.core.DownloadProgressTracker} is a good choice. This has no effect unless setBlockingStartup(false) has been called
++     * {@link org.bitcoinj.core.listeners.DownloadProgressTracker} is a good choice. This has no effect unless setBlockingStartup(false) has been called
+      * too, due to some missing implementation code.
+      */
+     public WalletAppKit setDownloadListener(DownloadProgressTracker listener) {

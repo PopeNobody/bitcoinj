@@ -1,0 +1,19 @@
+diff --git a/core/src/main/java/org/bitcoinj/core/listeners/SendHeadersMessage.java b/core/src/main/java/org/bitcoinj/core/listeners/SendHeadersMessage.java
+new file mode 100644
+index 000000000..0e9d75dc7
+--- /dev/null
++++ b/core/src/main/java/org/bitcoinj/core/listeners/SendHeadersMessage.java
+@@ -0,0 +1,13 @@
++package org.bitcoinj.core.listeners;
++
++import org.bitcoinj.core.EmptyMessage;
++import org.bitcoinj.core.NetworkParameters;
++
++/**
++ * Created by HashEngineering on 8/11/2017.
++ */
++public class SendHeadersMessage extends EmptyMessage{
++    public SendHeadersMessage(NetworkParameters params){
++        super(params);
++    }
++}

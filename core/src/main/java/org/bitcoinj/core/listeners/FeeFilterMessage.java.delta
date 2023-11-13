@@ -1,0 +1,19 @@
+diff --git a/core/src/main/java/org/bitcoinj/core/listeners/FeeFilterMessage.java b/core/src/main/java/org/bitcoinj/core/listeners/FeeFilterMessage.java
+new file mode 100644
+index 000000000..a05f82ac2
+--- /dev/null
++++ b/core/src/main/java/org/bitcoinj/core/listeners/FeeFilterMessage.java
+@@ -0,0 +1,13 @@
++package org.bitcoinj.core.listeners;
++
++import org.bitcoinj.core.EmptyMessage;
++import org.bitcoinj.core.NetworkParameters;
++
++/**
++ * Created by HashEngineering on 8/11/2017.
++ */
++public class FeeFilterMessage extends EmptyMessage{
++    public FeeFilterMessage(NetworkParameters params){
++        super(params);
++    }
++}

@@ -1,0 +1,13 @@
+diff --git a/core/src/test/java/org/bitcoinj/testing/TestWithPeerGroup.java b/core/src/test/java/org/bitcoinj/testing/TestWithPeerGroup.java
+index f36e82e46..77b5d797a 100644
+--- a/core/src/test/java/org/bitcoinj/testing/TestWithPeerGroup.java
++++ b/core/src/test/java/org/bitcoinj/testing/TestWithPeerGroup.java
+@@ -56,7 +56,7 @@ public class TestWithPeerGroup extends TestWithNetworkConnections {
+         super.setUp(blockStore);
+ 
+         remoteVersionMessage = new VersionMessage(PARAMS, 1);
+-        remoteVersionMessage.localServices = VersionMessage.NODE_NETWORK;
++        remoteVersionMessage.localServices = VersionMessage.NODE_NETWORK | VersionMessage.NODE_BITCOIN_CASH;
+         remoteVersionMessage.clientVersion = NotFoundMessage.MIN_PROTOCOL_VERSION;
+         blockJobs = false;
+         initPeerGroup();

@@ -1,0 +1,19 @@
+diff --git a/core/src/main/java/org/bitcoinj/signers/TransactionSigner.java b/core/src/main/java/org/bitcoinj/signers/TransactionSigner.java
+index e149bf10a..2b54eebf0 100644
+--- a/core/src/main/java/org/bitcoinj/signers/TransactionSigner.java
++++ b/core/src/main/java/org/bitcoinj/signers/TransactionSigner.java
+@@ -56,6 +56,14 @@ public interface TransactionSigner {
+             this.partialTx = partialTx;
+             this.keyPaths = new HashMap<Script, List<ChildNumber>>();
+         }
++
++        public ProposedTransaction(Transaction partialTx, boolean useForkId) {
++            this.partialTx = partialTx;
++            this.keyPaths = new HashMap<Script, List<ChildNumber>>();
++            this.useForkId = useForkId;
++        }
++
++        boolean useForkId = false;
+     }
+ 
+     class MissingSignatureException extends RuntimeException {

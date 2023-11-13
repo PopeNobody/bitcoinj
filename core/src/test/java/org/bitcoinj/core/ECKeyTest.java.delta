@@ -1,0 +1,25 @@
+diff --git a/core/src/test/java/org/bitcoinj/core/ECKeyTest.java b/core/src/test/java/org/bitcoinj/core/ECKeyTest.java
+index ed1fe56f1..0df376ae0 100644
+--- a/core/src/test/java/org/bitcoinj/core/ECKeyTest.java
++++ b/core/src/test/java/org/bitcoinj/core/ECKeyTest.java
+@@ -42,7 +42,6 @@ import org.spongycastle.crypto.params.KeyParameter;
+ 
+ import java.io.InputStream;
+ import java.math.BigInteger;
+-import java.security.SecureRandom;
+ import java.security.SignatureException;
+ import java.util.Arrays;
+ import java.util.List;
+@@ -65,11 +64,7 @@ public class ECKeyTest {
+ 
+     @Before
+     public void setUp() throws Exception {
+-        SecureRandom secureRandom = new SecureRandom();
+-
+-        byte[] salt = new byte[KeyCrypterScrypt.SALT_LENGTH];
+-        secureRandom.nextBytes(salt);
+-        Protos.ScryptParameters.Builder scryptParametersBuilder = Protos.ScryptParameters.newBuilder().setSalt(ByteString.copyFrom(salt));
++        Protos.ScryptParameters.Builder scryptParametersBuilder = Protos.ScryptParameters.newBuilder().setSalt(ByteString.copyFrom(KeyCrypterScrypt.randomSalt()));
+         ScryptParameters scryptParameters = scryptParametersBuilder.build();
+         keyCrypter = new KeyCrypterScrypt(scryptParameters);
+ 

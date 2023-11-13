@@ -1,0 +1,23 @@
+diff --git a/core/src/main/java/org/bitcoin/Secp256k1Context.java b/core/src/main/java/org/bitcoin/Secp256k1Context.java
+index c1d6484e4..8ee2fd80c 100644
+--- a/core/src/main/java/org/bitcoin/Secp256k1Context.java
++++ b/core/src/main/java/org/bitcoin/Secp256k1Context.java
+@@ -19,6 +19,8 @@ package org.bitcoin;
+ import org.slf4j.Logger;
+ import org.slf4j.LoggerFactory;
+ 
++import java.security.AccessControlException;
++
+ /**
+  * This class holds the context reference used in native methods to handle ECDSA operations.
+  */
+@@ -38,6 +40,9 @@ public class Secp256k1Context {
+         } catch (UnsatisfiedLinkError e) {
+             log.info(e.toString());
+             isEnabled = false;
++        } catch (AccessControlException e) {
++            log.debug(e.toString());
++            isEnabled = false;
+         }
+         enabled = isEnabled;
+         context = contextRef;

@@ -1,0 +1,12 @@
+diff --git a/core/src/main/java/org/bitcoinj/wallet/KeyChainGroup.java b/core/src/main/java/org/bitcoinj/wallet/KeyChainGroup.java
+index 6aba8d79d..368626ee4 100644
+--- a/core/src/main/java/org/bitcoinj/wallet/KeyChainGroup.java
++++ b/core/src/main/java/org/bitcoinj/wallet/KeyChainGroup.java
+@@ -594,7 +594,6 @@ public class KeyChainGroup implements KeyBag {
+         return filter;
+     }
+ 
+-    /** {@inheritDoc} */
+     public boolean isRequiringUpdateAllBloomFilter() {
+         throw new UnsupportedOperationException();   // Unused.
+     }

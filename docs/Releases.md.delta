@@ -1,0 +1,10 @@
+diff --git a/docs/Releases.md b/docs/Releases.md
+new file mode 100644
+index 000000000..440218c43
+--- /dev/null
++++ b/docs/Releases.md
+@@ -0,0 +1,4 @@
++# bitcoinj-cash Release History
++
++* [0.14.5](v0.14.md) - 2017-12-11 - Initial release for Bitcoin Cash
++

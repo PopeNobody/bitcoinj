@@ -1,0 +1,13 @@
+diff --git a/core/src/main/java/org/bitcoinj/core/listeners/TransactionReceivedInBlockListener.java b/core/src/main/java/org/bitcoinj/core/listeners/TransactionReceivedInBlockListener.java
+index c1b1865c7..40da0c667 100644
+--- a/core/src/main/java/org/bitcoinj/core/listeners/TransactionReceivedInBlockListener.java
++++ b/core/src/main/java/org/bitcoinj/core/listeners/TransactionReceivedInBlockListener.java
+@@ -44,7 +44,7 @@ public interface TransactionReceivedInBlockListener {
+                           BlockChain.NewBlockType blockType,
+                           int relativityOffset) throws VerificationException;
+     /**
+-     * <p>Called by the {@link BlockChain} when we receive a new {@link FilteredBlock} that contains the given
++     * <p>Called by the {@link BlockChain} when we receive a new {@link org.bitcoinj.core.FilteredBlock} that contains the given
+      * transaction hash in its merkle tree.</p>
+      *
+      * <p>A transaction may be received multiple times if is included into blocks in parallel chains. The blockType

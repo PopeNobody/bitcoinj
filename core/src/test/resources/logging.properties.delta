@@ -1,0 +1,9 @@
+diff --git a/core/src/test/resources/logging.properties b/core/src/test/resources/logging.properties
+deleted file mode 100644
+index 0aa499fae..000000000
+--- a/core/src/test/resources/logging.properties
++++ /dev/null
+@@ -1,2 +0,0 @@
+-handlers=java.util.logging.ConsoleHandler
+-org.bitcoinj.level=OFF
+\ No newline at end of file

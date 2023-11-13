@@ -1,0 +1,24 @@
+diff --git a/examples/src/main/javascript/forwarding.js b/examples/src/main/javascript/forwarding.js
+index aab22db1e..b3ed7c6e0 100644
+--- a/examples/src/main/javascript/forwarding.js
++++ b/examples/src/main/javascript/forwarding.js
+@@ -28,15 +28,15 @@ print("QRcode: http://qrickit.com/api/qr?d=" + uri);
+ 
+ wallet.allowSpendingUnconfirmedTransactions()
+ 
+-var listener = Java.extend(bcj.core.AbstractWalletEventListener);
++var listener = Java.extend(bcj.wallet.listeners.AbstractWalletEventListener);
+ wallet.addEventListener(new listener() {
+     onCoinsReceived: function(wallet, tx, prevBalance, newBalance) {
+         print("Received money! " + newBalance.toFriendlyString());
+-        var sendReq = bcj.core.Wallet.SendRequest.emptyWallet(forwardingAddr);
++        var sendReq = bcj.wallet.SendRequest.emptyWallet(forwardingAddr);
+         var sendResult = wallet.sendCoins(sendReq);
+         print("Sending back in tx " + sendResult.tx.hash);
+     }
+ });
+ 
+ print("Press Ctrl-C to stop");
+-java.lang.Thread.sleep(1000 * 60 * 60);  // One hour.
+\ No newline at end of file
++java.lang.Thread.sleep(1000 * 60 * 60);  // One hour.

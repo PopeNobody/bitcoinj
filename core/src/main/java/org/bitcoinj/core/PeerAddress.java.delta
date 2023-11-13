@@ -1,0 +1,13 @@
+diff --git a/core/src/main/java/org/bitcoinj/core/PeerAddress.java b/core/src/main/java/org/bitcoinj/core/PeerAddress.java
+index 7d5017ca3..682247602 100644
+--- a/core/src/main/java/org/bitcoinj/core/PeerAddress.java
++++ b/core/src/main/java/org/bitcoinj/core/PeerAddress.java
+@@ -107,7 +107,7 @@ public class PeerAddress extends ChildMessage {
+      * Bitcoin mainnet, version number is default for the given parameters.
+      */
+     public PeerAddress(NetworkParameters params, InetAddress addr) {
+-        this(params, addr, MainNetParams.get().getPort());
++        this(params, addr, params.getPort());
+     }
+ 
+     /**

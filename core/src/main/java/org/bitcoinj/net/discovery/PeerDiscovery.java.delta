@@ -1,0 +1,13 @@
+diff --git a/core/src/main/java/org/bitcoinj/net/discovery/PeerDiscovery.java b/core/src/main/java/org/bitcoinj/net/discovery/PeerDiscovery.java
+index 72452c25d..e0792bc0b 100644
+--- a/core/src/main/java/org/bitcoinj/net/discovery/PeerDiscovery.java
++++ b/core/src/main/java/org/bitcoinj/net/discovery/PeerDiscovery.java
+@@ -29,7 +29,7 @@ public interface PeerDiscovery {
+ 
+     /**
+      * Returns an array of addresses. This method may block.
+-     * @param services Required services as a bitmask, e.g. {@link VersionMessage#NODE_NETWORK}.
++     * @param services Required services as a bitmask, e.g. {@link org.bitcoinj.core.VersionMessage#NODE_NETWORK}.
+      */
+     InetSocketAddress[] getPeers(long services, long timeoutValue, TimeUnit timeoutUnit) throws PeerDiscoveryException;
+ 
